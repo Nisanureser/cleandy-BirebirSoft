@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* -------------------------------------------
     
-    sliders --> Sliderler
+    sliders --> Sliderler //yorumlar için
     
     ------------------------------------------- */
     const initSliders = () => {
@@ -476,7 +476,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* -------------------------------------------
         
-    forms --> Formlar
+    forms --> Formlar //iletişim formu için cleave.js kütüphanesi kullanılıyor
 
     ------------------------------------------- */
 
@@ -485,21 +485,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
         phoneInputs.forEach(function (phoneInput) {
             var cleave = new Cleave(phoneInput, {
-                delimiters: ['(', ')', '-', '-'],
+                delimiters: ['(', ')', ' ', ' '],
                 blocks: [3, 3, 3, 2, 2],
-                prefix: '+38',
+                prefix: '+90',
                 numericOnly: true,
                 noImmediatePrefix: true,
             });
 
             phoneInput.addEventListener('focus', function () {
                 if (phoneInput.value === '') {
-                    phoneInput.value = '+38';
+                    phoneInput.value = '+90';
                 }
             });
 
             phoneInput.addEventListener('blur', function () {
-                if (phoneInput.value === '+38' || phoneInput.value === '+38(') {
+                if (phoneInput.value === '+90' || phoneInput.value === '+90(') {
                     phoneInput.value = '';
                 }
             });
