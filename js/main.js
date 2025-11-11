@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* -------------------------------------------
     
-    preloader
+    preloader --> Ön yükleme
     
     ------------------------------------------- */
 
@@ -36,24 +36,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 clearInterval(preloaderInterval);
                 setTimeout(() => {
                     preloader.classList.add('mil-complete');
-                }, 500); // Затримка в пів секунди перед додаванням класу
+                }, 500); // Sınıf eklenmeden önce yarım saniyelik gecikme
             }
         }
 
         let preloaderInterval = setInterval(updatePreloader, 100);
     };
 
-    // Додаємо затримку в пів секунди перед запуском initPreloader
+    // initPreloader'ı başlatmadan önce yarım saniyelik bir gecikme ekle
     setTimeout(initPreloader, 500);
     /* -------------------------------------------
     
-    page transitions
+    page transitions --> Sayfa geçişleri
     
     ------------------------------------------- */
     const options = {
-        containers: ['#swupMain', '#swupMenu'],
-        animateHistoryBrowsing: true,
-        linkSelector: 'a:not([data-no-swup]):not([href^="#"])',
+        containers: ['#swupMain', '#swupMenu'], //güncellenecek bölümler 
+        animateHistoryBrowsing: true, //geri ileri geçiş animasyonu
+        linkSelector: 'a:not([data-no-swup]):not([href^="#"])', //hangi linklere uygulanacak 
         plugins: [new SwupBodyClassPlugin()]
     };
 
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* -------------------------------------------
     
-    smooth scroll
+    smooth scroll --> Yumuşak kaydırma
     
     ------------------------------------------- */
     const lenis = new Lenis({
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* -------------------------------------------
     
-    menu
+    menu --> Menü
     
     ------------------------------------------- */
     const menuBtn = document.querySelector('.mil-menu-btn');
@@ -105,6 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    //Menü linklerine tıklanınca menüyü kapatma işlemi
     menuLinks.forEach(link => {
         link.addEventListener('click', function () {
             if (menuBtn && mainMenu) {
@@ -114,6 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    //Scroll ile header stil değişimi
     window.addEventListener('scroll', function () {
         if (mainMenu && topPanel) {
             if (window.scrollY > 10) {
@@ -126,6 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    //Menü linklerine tıklanınca sayfa içinde yumuşak scroll işlemi
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -144,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* -------------------------------------------
     
-    right buttons
+    right buttons --> Sağ düğmeler
     
     ------------------------------------------- */
     const milRightButtonsFrame = document.querySelector('.mil-right-buttons-frame');
@@ -181,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* -------------------------------------------
     
-    sliders
+    sliders --> Sliderler
     
     ------------------------------------------- */
     const initSliders = () => {
@@ -243,7 +246,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* -------------------------------------------
     
-    scroll animation
+    scroll animation --> Kaydırma animasyonu
 
     ------------------------------------------- */
     const initScrollAnimations = () => {
@@ -398,7 +401,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* -------------------------------------------
     
-    accordion
+    accordion --> Açılır menü
     
     ------------------------------------------- */
     const initAccordion = () => {
@@ -439,7 +442,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* -------------------------------------------
     
-    popup
+    popup --> İndirim kartı
     
     ------------------------------------------- */
     let popupClicked = false;
@@ -473,7 +476,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* -------------------------------------------
         
-    forms
+    forms --> Formlar
 
     ------------------------------------------- */
 
@@ -506,7 +509,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* -------------------------------------------
             
-    custom select
+    custom select --> Özel seçim
             
     ------------------------------------------- */
     const initSelect = () => {
@@ -610,7 +613,7 @@ document.addEventListener("DOMContentLoaded", function () {
     /*----------------------------------------------------------
     ------------------------------------------------------------
 
-    REINIT
+    REINIT --> Sayfa yeniden başlatma
 
     ------------------------------------------------------------
     ----------------------------------------------------------*/
