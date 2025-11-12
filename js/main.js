@@ -605,7 +605,6 @@ document.addEventListener("DOMContentLoaded", function () {
         initAccordion();
         initSliders();
         initScrollAnimations();
-        initPopup();
         initForms();
         initSelect();
         initBF();
