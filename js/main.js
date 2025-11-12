@@ -21,30 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
     
     ------------------------------------------- */
 
-    const initPreloader = () => {
-        let preloaderPercent = document.querySelector('.mil-percent');
-        let preloaderLine = document.querySelector('.mil-preload-line');
-        let preloader = document.querySelector('.mil-preloader-frame');
-        let progress = 0;
-
-        function updatePreloader() {
-            if (progress <= 100) {
-                preloaderPercent.textContent = progress;
-                preloaderLine.style.width = progress + "%";
-                progress += 10;
-            } else {
-                clearInterval(preloaderInterval);
-                setTimeout(() => {
-                    preloader.classList.add('mil-complete');
-                }, 500); // Sınıf eklenmeden önce yarım saniyelik gecikme
-            }
-        }
-
-        let preloaderInterval = setInterval(updatePreloader, 100);
-    };
-
-    // initPreloader'ı başlatmadan önce yarım saniyelik bir gecikme ekle
-    setTimeout(initPreloader, 500);
     /* -------------------------------------------
     
     page transitions --> Sayfa geçişleri
@@ -445,35 +421,6 @@ document.addEventListener("DOMContentLoaded", function () {
     popup --> İndirim kartı
     
     ------------------------------------------- */
-    let popupClicked = false;
-
-    const initPopup = () => {
-        const callPopupButton = document.querySelector('.mil-call-popup');
-        const closePopupButton = document.querySelector('.mil-close-popup');
-        const discountPopup = document.querySelector('.mil-discount-popup');
-
-        if (callPopupButton && discountPopup) {
-            callPopupButton.addEventListener('click', function () {
-                discountPopup.classList.add('mil-active');
-                popupClicked = true;
-            });
-        }
-
-        if (closePopupButton && discountPopup) {
-            closePopupButton.addEventListener('click', function () {
-                discountPopup.classList.remove('mil-active');
-            });
-        }
-    };
-
-    initPopup();
-
-    setTimeout(function () {
-
-        document.querySelector('.mil-discount-popup').classList.add('mil-active');
-
-    }, 20000);
-
     /* -------------------------------------------
         
     forms --> Formlar //iletişim formu için cleave.js kütüphanesi kullanılıyor
