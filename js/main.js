@@ -216,6 +216,36 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
             });
         }
+          // Clients slider ekleme
+          const clientsSliderEl = document.querySelector('.mil-clients-slider');
+          if (clientsSliderEl) {
+              new Swiper(clientsSliderEl, {
+                  spaceBetween: 30,
+                  slidesPerView: 2,
+                  loop: true,
+                  speed: 3000,
+                  autoplay: {
+                      delay: 1,
+                      disableOnInteraction: false,
+                  },
+                  freeMode: true,
+                  freeModeMomentum: false,
+                  breakpoints: {
+                      576: {
+                          slidesPerView: 3,
+                      },
+                      768: {
+                          slidesPerView: 4,
+                      },
+                      992: {
+                          slidesPerView: 5,
+                      },
+                      1200: {
+                          slidesPerView: 6,
+                      },
+                  },
+              });
+          }
     };
 
     initSliders();
