@@ -5740,3 +5740,9 @@ pagination
   -webkit-transform: scale(1);
           transform: scale(1);
 }
+
+@media (max-width: 991px) {
+  .mil-circle-text-position {
+    display: none;
+  }
+}
